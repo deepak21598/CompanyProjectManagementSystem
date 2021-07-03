@@ -8,6 +8,7 @@ using System.Data;
 using CompanyProjectManagementSystem.DBConnection;
 using CompanyProjectManagementSystem.Authentication;
 using CompanyProjectManagementSystem.Models;
+using CompanyProjectManagementSystem.Filters;
 
 namespace CompanyProjectManagementSystem.Controllers
 {
@@ -18,6 +19,7 @@ namespace CompanyProjectManagementSystem.Controllers
 
         [Route("api/projects")]
         [HttpGet]
+        [JwtAuthorize]
         public HttpResponseMessage Projects(int pagenumber,int pagesize)
         {
             try
